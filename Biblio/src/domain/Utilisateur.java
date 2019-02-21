@@ -3,7 +3,7 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Utilisateur {
+public abstract class Utilisateur {
 	
     private Integer idUtilisateur ;
 	
@@ -60,6 +60,8 @@ public class Utilisateur {
 		
 		return emprunt.size();
 	}
+	
+	public abstract boolean isConditionsPretAcceptees()  ;
 
 	public Integer getIdUtilisateur() {
 		return idUtilisateur;

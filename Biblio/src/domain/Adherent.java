@@ -21,8 +21,8 @@ public class Adherent extends Utilisateur {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public boolean isConditionsPretAcceptees() throws Exception {
+	
+	public boolean isConditionsPretAcceptees() {
 		
 		
 		
@@ -30,9 +30,18 @@ public class Adherent extends Utilisateur {
 		
 		if (super.getNbEmpruntsEnCours() <= nbMaxPret && date < 15) {
 			
+			System.out.println("Emprunt OK!!!");
+			
 			return true ;
-		}
-		else throw new Exception("La duree de l'emprunt est de "  +"Vous ne pouvez plus emprunter!!!");
+		} else
+			try {
+				throw new Exception("La duree de l'emprunt est de "  + date + " jours et le nombre d'emprunt est de " + super.getNbEmpruntsEnCours() + " , par consequent vous ne pouvez plus emprunter!!!");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.err.println("La duree de l'emprunt est de "  + date + " jours et le nombre d'emprunt est de " + super.getNbEmpruntsEnCours() + " , par consequent vous ne pouvez plus emprunter!!!");
+			}
+		return false;	
+	
 	   }
 	   
 	   
