@@ -14,9 +14,9 @@ public class TestAdherentTroisEmprunts {
 		
 		Adherent ad = new Adherent();
 		
-		ad.addEmpruntEnCours(new EmpruntEnCours("15/02/2019"));
-		ad.addEmpruntEnCours(new EmpruntEnCours("15/02/2019"));
-		ad.addEmpruntEnCours(new EmpruntEnCours("15/02/2019"));
+		ad.addEmpruntEnCours(new EmpruntEnCours("15/02/2019",1));
+		ad.addEmpruntEnCours(new EmpruntEnCours("15/02/2019",2));
+		ad.addEmpruntEnCours(new EmpruntEnCours("15/02/2019",3));
 		
 		ad.isConditionsPretAcceptees();
 		

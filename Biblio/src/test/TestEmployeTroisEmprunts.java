@@ -13,9 +13,9 @@ public class TestEmployeTroisEmprunts {
 		
 		Employee ep1 = new Employee();
 		
-		ep1.addEmpruntEnCours(new EmpruntEnCours("15/02/2019"));
-		ep1.addEmpruntEnCours(new EmpruntEnCours("15/02/2019"));
-		ep1.addEmpruntEnCours(new EmpruntEnCours("15/02/2019"));
+		ep1.addEmpruntEnCours(new EmpruntEnCours("15/02/2019",1));
+		ep1.addEmpruntEnCours(new EmpruntEnCours("15/02/2019",2));
+		ep1.addEmpruntEnCours(new EmpruntEnCours("15/02/2019",3));
 		
 		ep1.isConditionsPretAcceptees();
 

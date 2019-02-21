@@ -16,8 +16,6 @@ public abstract class Utilisateur {
 	public EmpruntEnCours ep = new EmpruntEnCours();
 	
 	
-
-
 	public Utilisateur() {
 	}
 
@@ -43,9 +41,8 @@ public abstract class Utilisateur {
 			emprunt = new ArrayList<>();
 			
 		}
-		
 		this.ep = ep;
-		emprunt.add(this.ep);
+		emprunt.add(ep);
 		
 	}
 	
@@ -56,12 +53,17 @@ public abstract class Utilisateur {
 		
 	}
 	
+	public void removeEmprunt(EmpruntEnCours ep) {
+		
+		emprunt.remove(ep);
+		
+	}
 	public int getNbEmpruntsEnCours() {
 		
 		return emprunt.size();
 	}
 	
-	public abstract boolean isConditionsPretAcceptees()  ;
+	public abstract boolean isConditionsPretAcceptees() ;
 
 	public Integer getIdUtilisateur() {
 		return idUtilisateur;
@@ -92,7 +94,7 @@ public abstract class Utilisateur {
 	public String toString() {
 		if (emprunt != null) {
 			return  "Utilisateur qui a pour identifiant: " + idUtilisateur + " et sa date d'emprunt est le: "
-					+ this.ep.getDateEmprunt();
+					+ ep.getDateEmprunt();
 					
 		}
 		 

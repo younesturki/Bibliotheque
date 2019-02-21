@@ -28,7 +28,7 @@ public class Adherent extends Utilisateur {
 		
 		long date = (new Date().getTime() - ep.getDateEmprunt().getTime())/86400000 ;
 		
-		if (super.getNbEmpruntsEnCours() <= nbMaxPret && date < 15) {
+		if (super.getNbEmpruntsEnCours() < nbMaxPret && date < 15) {
 			
 			System.out.println("Emprunt OK!!!");
 			

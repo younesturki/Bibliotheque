@@ -29,7 +29,7 @@ public class Employee extends Utilisateur {
 		
 		long date = (new Date().getTime() - ep.getDateEmprunt().getTime())/86400000 ;
 		if (date > 15 || super.getNbEmpruntsEnCours() >= 3) {
-			System.err.println("La date de Votre emprunt est de: " + date + " jours, et le nombre d'emprunt est de: " + super.getNbEmpruntsEnCours() + " mais vous pouvez toujours emprunter");
+			System.err.println("La duree de vos emprunts est de: " + date + " jours, et le nombre d'emprunt est de: " + super.getNbEmpruntsEnCours() + " mais vous pouvez toujours emprunter");
 		}
 		return true;
 	}
