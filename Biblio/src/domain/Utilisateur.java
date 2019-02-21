@@ -56,7 +56,8 @@ public abstract class Utilisateur {
 	public void removeEmprunt(EmpruntEnCours ep) {
 		
 		emprunt.remove(ep);
-		
+		EmpruntArchive ar = new EmpruntArchive(ep);
+		System.out.println(ar);
 	}
 	public int getNbEmpruntsEnCours() {
 		

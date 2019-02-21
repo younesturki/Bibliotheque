@@ -1,8 +1,10 @@
 package domain;
 
+import java.util.Date;
+
 public class EmpruntArchive {
 	
-	public EmpruntEnCours ep ;
+	public EmpruntEnCours ep = new EmpruntEnCours();
 
 	public EmpruntArchive(EmpruntEnCours ep) {
 		this.ep = ep;
@@ -10,7 +12,7 @@ public class EmpruntArchive {
 
 	@Override
 	public String toString() {
-		return "EmpruntArchive [ep=" + ep + "]";
+		return "l'emprunt est archivé : " + ep.toString() + " et la date de retour est: " + new Date();
 	}
 	
 	
