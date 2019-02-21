@@ -2,6 +2,8 @@ package test;
 
 import java.text.ParseException;
 
+import javax.swing.JOptionPane;
+
 import controller.EmpruntCtrl;
 import domain.Adherent;
 import domain.Employee;
@@ -16,21 +18,38 @@ public class TestDeBase {
 		
 		EmpruntCtrl emp = new EmpruntCtrl();
 		
-		Exemplaire ex1 = emp.theExemplaireDao.findByExemplaire(123456);
-		Exemplaire ex2 = emp.theExemplaireDao.findByExemplaire(789654);
+		String message = JOptionPane.showInputDialog("Quel est le premier Id");
 		
-		System.out.println("\n" + ex1);
-		System.out.println(ex2);
+		int n1 = Integer.parseInt(message);
+		
+		String message2 = JOptionPane.showInputDialog("Quel est le deuxieme Id");
+		
+		int n2 = Integer.parseInt(message2);
+		
+		Exemplaire ex1 = emp.theExemplaireDao.findByExemplaire(n1);
+		Exemplaire ex2 = emp.theExemplaireDao.findByExemplaire(n2);
+		
+		JOptionPane.showMessageDialog(null, ex1, "RETRIEVE", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(null, ex2, "RETRIEVE", JOptionPane.PLAIN_MESSAGE);
+		
 		
 		System.out.println("\nDemande d'un Adherent par son id aux Dao");
-		Adherent ad1 = emp.theUtilisateurDao.findByKey(2563);
+        String message3 = JOptionPane.showInputDialog("Entrer votre Id");
 		
-		System.out.println("\n" + ad1);
+		int n3 = Integer.parseInt(message3);
+		Adherent ad1 = emp.theUtilisateurDao.findByKey(n3);
+		
+		JOptionPane.showMessageDialog(null, ad1, "RETRIEVE", JOptionPane.INFORMATION_MESSAGE);
+		//System.out.println("\n" + ad1);
 		
 		System.out.println("\nDemande d'un Employee par son id aux Dao");
-		Employee ep1 = emp.theUtilisateurDao.findByEmployee(369854);
+        String message4 = JOptionPane.showInputDialog("Entrer votre Id");
 		
-		System.out.println("\n" + ep1);
+		int n4 = Integer.parseInt(message4);
+		Employee ep1 = emp.theUtilisateurDao.findByEmployee(n4);
+		
+		JOptionPane.showMessageDialog(null, ep1, "RETRIEVE", JOptionPane.INFORMATION_MESSAGE);
+		//System.out.println("\n" + ep1);
 		
 		System.out.println("\nCreation d'un Emprunt en Cours pour l'Adherent: ");
 		

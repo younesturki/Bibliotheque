@@ -16,12 +16,20 @@ public class Adherent extends Utilisateur {
 
 
 
-	public Adherent(Integer idUtilisateur) {
+	public Adherent(int idUtilisateur) {
 		super(idUtilisateur);
 		// TODO Auto-generated constructor stub
 	}
 
 	
+	public Adherent(Integer idUtilisateur, String pwd , String telephone) {
+		super(idUtilisateur, pwd);
+		this.telephone = telephone;
+		
+	}
+
+
+
 	public boolean isConditionsPretAcceptees() {
 		
 		
@@ -54,7 +62,7 @@ public class Adherent extends Utilisateur {
 	@Override
 	public String toString() {
 	
-		return "l'Adherent est un " + super.toString() ;
+		return "l'Adherent est un " + super.toString() + ", son numero de telephone est: " + telephone;
 	}
 
 	   

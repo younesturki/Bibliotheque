@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class Utilisateur {
 	
-    private Integer idUtilisateur ;
+    private int idUtilisateur ;
 	
 	private String pwd ;
 	
@@ -15,14 +15,16 @@ public abstract class Utilisateur {
 	
 	public EmpruntEnCours ep = new EmpruntEnCours();
 	
+	public int n2 = 10 ;
 	
 	public Utilisateur() {
 	}
 
 	
-	public Utilisateur(Integer idUtilisateur) {
-		super();
+	public Utilisateur(int idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
+		this.pwd = "Salut" + n2;
+		n2++;
 	}
 
 
@@ -34,6 +36,12 @@ public abstract class Utilisateur {
 	}
 	
 	 
+	public Utilisateur(Integer idUtilisateur, String pwd) {
+		this.idUtilisateur = idUtilisateur;
+		this.pwd = pwd;
+	}
+
+
 	public void addEmpruntEnCours(EmpruntEnCours ep) {
 		
 		if (emprunt == null) {
@@ -56,7 +64,7 @@ public abstract class Utilisateur {
 	public void removeEmprunt(EmpruntEnCours ep) {
 		
 		emprunt.remove(ep);
-		EmpruntArchive ar = new EmpruntArchive(ep);
+		EmpruntArchive ar = new EmpruntArchive(ep);	
 		System.out.println(ar);
 	}
 	public int getNbEmpruntsEnCours() {
@@ -99,7 +107,7 @@ public abstract class Utilisateur {
 					
 		}
 		 
-		return "Utilisateur qui a pour identifiant: " + idUtilisateur ;
+		return "Utilisateur qui a pour identifiant: " + idUtilisateur + " son mot de passe est: " + pwd ;
 	}
 	
 	

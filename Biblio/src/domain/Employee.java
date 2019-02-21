@@ -4,24 +4,26 @@ import java.util.Date;
 
 public class Employee extends Utilisateur {
 	
-	private String codeMatricule ;
+	private String codeMatricule;
 	private EnumCategorieEmploye categorieEmployee ;
 	
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Employee(Integer idUtilisateur, String pwd, String pseudonyme) {
-		super(idUtilisateur, pwd, pseudonyme);
-		// TODO Auto-generated constructor stub
+	public Employee(Integer idUtilisateur, String pwd ,EnumCategorieEmploye categorieEmployee) {
+		super(idUtilisateur, pwd);
+		this.categorieEmployee = categorieEmployee;
+				
 	}
-	public Employee(Integer idUtilisateur) {
+	public Employee(int idUtilisateur) {
 		super(idUtilisateur);
 		// TODO Auto-generated constructor stub
 	}
+	
 	@Override
 	public String toString() {
-		return "L'Employee est un " + super.toString();
+		return "L'Employee est un " + super.toString() + " , sa categorie est: " + categorieEmployee;
 	}
 	
 	@Override

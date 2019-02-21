@@ -21,9 +21,22 @@ public class TestRetour {
 		
 		ad.removeEmprunt(em2);
 		int empruntEnCours = ad.getNbEmpruntsEnCours();
-		
 		System.out.println(empruntEnCours);
-
+		
+		ad.removeEmprunt(em3);
+		ad.removeEmprunt(em1);
+		int empruntEnCours2 = ad.getNbEmpruntsEnCours();
+		System.out.println(empruntEnCours2);
+		
+		System.gc();
+		em1 = null ;
+		System.gc();
+		em2 = null;
+		System.gc();
+		em3= null;
+		Runtime.getRuntime().gc();
+		System.out.println("l'emprunt en cours est garbage cillecté " + em1 + em2 + em3);
+		
 	}
 
 }
