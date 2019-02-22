@@ -29,8 +29,8 @@ public class TestDeBase {
 		Exemplaire ex1 = emp.theExemplaireDao.findByExemplaire(n1);
 		Exemplaire ex2 = emp.theExemplaireDao.findByExemplaire(n2);
 		
-		JOptionPane.showMessageDialog(null, ex1, "RETRIEVE", JOptionPane.PLAIN_MESSAGE);
-		JOptionPane.showMessageDialog(null, ex2, "RETRIEVE", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(null, ex1, "EXEMPLAIRE N°1", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(null, ex2, "EXEMPLAIRE N°2", JOptionPane.PLAIN_MESSAGE);
 		
 		
 		System.out.println("\nDemande d'un Adherent par son id aux Dao");
@@ -39,8 +39,8 @@ public class TestDeBase {
 		int n3 = Integer.parseInt(message3);
 		Adherent ad1 = emp.theUtilisateurDao.findByKey(n3);
 		
-		JOptionPane.showMessageDialog(null, ad1, "RETRIEVE", JOptionPane.INFORMATION_MESSAGE);
-		//System.out.println("\n" + ad1);
+		JOptionPane.showMessageDialog(null, ad1, "ADHERENT", JOptionPane.INFORMATION_MESSAGE);
+		System.out.println("\n" + ad1);
 		
 		System.out.println("\nDemande d'un Employee par son id aux Dao");
         String message4 = JOptionPane.showInputDialog("Entrer votre Id");
@@ -48,8 +48,8 @@ public class TestDeBase {
 		int n4 = Integer.parseInt(message4);
 		Employee ep1 = emp.theUtilisateurDao.findByEmployee(n4);
 		
-		JOptionPane.showMessageDialog(null, ep1, "RETRIEVE", JOptionPane.INFORMATION_MESSAGE);
-		//System.out.println("\n" + ep1);
+		JOptionPane.showMessageDialog(null, ep1, "EMPLOYEE", JOptionPane.INFORMATION_MESSAGE);
+		System.out.println("\n" + ep1);
 		
 		System.out.println("\nCreation d'un Emprunt en Cours pour l'Adherent: ");
 		
