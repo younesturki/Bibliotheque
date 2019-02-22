@@ -1,5 +1,6 @@
 package domain;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public abstract class Utilisateur {
 	
 	public EmpruntEnCours ep = new EmpruntEnCours();
 	
-	public int n2 = 10 ;
+	private static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public Utilisateur() {
 	}
@@ -23,8 +24,8 @@ public abstract class Utilisateur {
 	
 	public Utilisateur(int idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
-		this.pwd = "Salut" + n2;
-		n2++;
+		
+	
 	}
 
 
@@ -103,7 +104,7 @@ public abstract class Utilisateur {
 	public String toString() {
 		if (emprunt != null) {
 			return  "Utilisateur qui a pour identifiant: " + idUtilisateur + " et sa date d'emprunt est le: "
-					+ ep.getDateEmprunt();
+					+ formatter.format(ep.getDateEmprunt());
 					
 		}
 		 

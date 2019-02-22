@@ -15,11 +15,15 @@ public class EmpruntEnCours {
 
 	   
 	public EmpruntEnCours(String datestr) throws ParseException {
+	
 		this.dateEmprunt = formatter.parse(datestr);
+		
+		
 	}
 	
 	public EmpruntEnCours(String datestr,int idExemplaire) throws ParseException {
-		this.dateEmprunt = formatter.parse(datestr);
+
+		this.dateEmprunt  = formatter.parse(datestr);
 		exp.setIdExemplaire(idExemplaire);
 		exp.setStatus(EnumStatusExemplaire.PRETE);
 	}
@@ -32,7 +36,7 @@ public class EmpruntEnCours {
 
 	@Override
 	public String toString() {
-		return "La date d'emprunt est de: " + dateEmprunt ;
+		return "La date d'emprunt est le: " + formatter.format(dateEmprunt);
 	}
 
 
